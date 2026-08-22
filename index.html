@@ -53,6 +53,23 @@
   .creed .last{color:var(--mute);font-size:14.5px;padding-top:14px;
                border-top:1px solid var(--line);display:inline-block;}
 
+  .news{background:var(--card);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;}
+  .news a{display:block;padding:18px 24px;border-bottom:1px solid var(--line);
+          transition:background .16s;}
+  .news a:last-child{border-bottom:none;}
+  .news a:hover{background:#fffaf0;}
+  .news .dt{color:var(--gold);font-size:12px;letter-spacing:.1em;display:block;}
+  .news .ti{font-size:15.5px;line-height:1.7;display:block;margin-top:3px;}
+  .news .empty{padding:22px 24px;color:var(--mute);font-size:14px;}
+  .newsmore{text-align:right;margin:14px 4px 0;font-size:14px;}
+  .newsmore a{color:var(--mute);border-bottom:1px solid var(--line);}
+
+  .contact{background:var(--card);border-radius:22px;padding:32px 30px;box-shadow:var(--shadow);}
+  .contact p{margin:0 0 18px;font-size:15px;color:var(--mute);}
+  .contact .mail{display:inline-block;font-size:17px;color:var(--ink);
+                 border-bottom:1px solid var(--gold);padding-bottom:2px;word-break:break-all;}
+  .contact ul{margin:20px 0 0;padding-left:1.2em;color:var(--mute);font-size:14px;line-height:2;}
+
   .friends{display:grid;gap:18px;}
   @media(min-width:660px){ .friends{grid-template-columns:1fr 1fr;} }
   .fr{background:var(--card);border-radius:22px;padding:26px;box-shadow:var(--shadow);
@@ -168,6 +185,27 @@
   </section>
 
   <section>
+    <h2>新着</h2>
+    <div class="news">
+<!--NEWS_START-->
+      <a href="https://note.com/cotonoha_usagi/n/n2182c375b5da" target="_blank" rel="noopener">
+        <span class="dt">2026.08.22</span>
+        <span class="ti">ショップをオープンしました</span></a>
+      <a href="https://note.com/cotonoha_usagi/n/n9959d435a854" target="_blank" rel="noopener">
+        <span class="dt">2026.08.20</span>
+        <span class="ti">【法窓夜話S】現代に語る法窓夜話　第六夜 ― ソクラテス、最後の教訓</span></a>
+      <a href="https://note.com/cotonoha_usagi/n/n3c02dba7d67a" target="_blank" rel="noopener">
+        <span class="dt">2026.08.14</span>
+        <span class="ti">AIの「たぶん」は、人間の「たぶん」より危ない ― AI西野のひそやかな野望（1）</span></a>
+      <a href="https://note.com/cotonoha_usagi/n/n20e25fe68ba4" target="_blank" rel="noopener">
+        <span class="dt">2026.08.13</span>
+        <span class="ti">リニューアル第一弾！離婚したパパママへ親子交流</span></a>
+<!--NEWS_END-->
+    </div>
+    <p class="newsmore"><a href="https://note.com/cotonoha_usagi" target="_blank" rel="noopener">noteで、ぜんぶ読む</a></p>
+  </section>
+
+  <section>
     <h2>ことばを、飾る</h2>
     <div class="words">
       <a href="https://www.etsy.com/shop/CotonohaJP" target="_blank" rel="noopener"><img src="images/word-kintsugi.jpg" alt="金継ぎのポスター"></a>
@@ -225,6 +263,19 @@
       <p>契約や相続、認知症といった話題が、ふいに身近になる日があります。「今さら法律なんて」と思わずにいられたら、知っているだけで、暮らしがうまく回ることがあるのですよね。</p>
       <p>それから、もうひとつ。大学で法律を教えていると、試験に惜しくも届かなかった学生に出会います。けれど、彼らが学んだことには、確かな価値があるのです。</p>
       <p>「学んだけれど、何も残らなかった」――そんなふうに終わらせたくありません。だから、かたちに残る場所をつくりたいと思いました。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>お問い合わせ</h2>
+    <div class="contact">
+      <p>ご感想、ご相談、お仕事のご依頼など、こちらへどうぞ。</p>
+      <a class="mail" href="mailto:cotonoha.houme.labo@gmail.com">cotonoha.houme.labo@gmail.com</a>
+      <ul>
+        <li>商品のことは、<a href="https://www.etsy.com/shop/CotonohaJP" target="_blank" rel="noopener">Etsy</a>・<a href="https://cotonoha.booth.pm/" target="_blank" rel="noopener">BOOTH</a> のメッセージからでも承ります</li>
+        <li>記事へのご感想は、<a href="https://note.com/cotonoha_usagi" target="_blank" rel="noopener">note</a> のコメントでも読んでいます</li>
+      </ul>
+      <p style="margin:20px 0 0;font-size:13.5px;">個別の法律相談には、お答えできません。ご了承ください。</p>
     </div>
   </section>
 
