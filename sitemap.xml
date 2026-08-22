@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://cotonoha.link/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cotonoha.link/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cotonoha.link/en/"/>
+    <lastmod>2026-08-22</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cotonoha.link/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://cotonoha.link/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cotonoha.link/en/"/>
+    <lastmod>2026-08-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cotonoha.link/privacy.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.2</priority>
+  </url>
+</urlset>
