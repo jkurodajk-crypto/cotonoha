@@ -1,198 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cotonoha — Japanese words, with a little room to breathe</title>
-<meta name="description" content="Japanese words, written in Japan. Printable wall art of kintsugi, natsukashii, komorebi, tsundoku, ma, ikigai and mono no aware — each with its meaning and a quiet line of our own.">
+<title>Cotonoha ／ ことのは</title>
+<meta name="description" content="法とことばを、やさしく、たのしく、ちょっぴり深く。ことのは法務ラボとCotonohaJPのサイト。">
 
 <!-- Pinterest site verification: replace CONTENT with the value Pinterest gives you -->
 <!-- <meta name="p:domain_verify" content="PUT_THE_PINTEREST_CODE_HERE"> -->
-
 <style>
   :root{
-    --bg:#fbf3e0;
-    --ink:#382c20;
-    --mute:#6d5c4a;
-    --gold:#ba924a;
-    --rule:#e2d6bd;
+    --bg:#fdf6e8; --card:#fffdf7; --ink:#3b2f22; --mute:#7a6852;
+    --gold:#c39a4e; --leaf:#8fa176; --sky:#a7cbd6; --line:#ece0c8;
+    --sans:"Hiragino Maru Gothic ProN","Yu Gothic UI","Yu Gothic","Meiryo",system-ui,sans-serif;
+    --serif:"Yu Mincho","Hiragino Mincho ProN",Georgia,serif;
+    --shadow:0 2px 3px rgba(120,95,60,.05), 0 12px 28px rgba(120,95,60,.09);
   }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:Georgia,"Times New Roman","Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
-    line-height:1.85;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:760px;margin:0 auto;padding:0 26px;}
+  html,body{margin:0;padding:0;overflow-x:hidden;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+       line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px;}
+  a{color:inherit;text-decoration:none;}
 
-  header{text-align:center;padding:90px 0 54px;}
-  .mark{
-    font-size:76px;line-height:1;
-    font-family:"Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
-    letter-spacing:.04em;
-  }
-  h1{
-    font-size:40px;font-style:italic;font-weight:normal;
-    margin:22px 0 0;letter-spacing:.01em;
-  }
-  .tag{color:var(--mute);font-style:italic;font-size:18px;margin-top:14px;}
-  .rule{width:120px;height:1px;background:var(--gold);margin:34px auto;}
+  /* hero */
+  header{position:relative;text-align:center;padding:64px 0 20px;}
+  header::before{content:"";position:absolute;left:0;right:0;top:-40px;bottom:40px;
+    background:radial-gradient(ellipse at 50% 30%, #fffaf0 0%, var(--bg) 68%);z-index:0;}
+  header > *{position:relative;z-index:1;}
+  .hero-usagi{width:190px;margin:0 auto 4px;display:block;
+    filter:drop-shadow(0 14px 22px rgba(120,95,60,.16));}
+  h1{font-family:var(--serif);font-size:40px;font-weight:400;letter-spacing:.16em;margin:6px 0 0;}
+  .romaji{font-family:Georgia,serif;font-style:italic;color:var(--gold);
+          font-size:13px;letter-spacing:.3em;margin-top:8px;}
+  .tag{color:var(--mute);font-size:16px;margin-top:20px;}
+  .leafrule{width:78px;height:2px;border-radius:2px;background:var(--gold);
+            margin:30px auto 0;opacity:.55;}
 
-  section{padding:14px 0 46px;}
-  h2{
-    font-size:15px;font-style:italic;font-weight:normal;color:var(--mute);
-    letter-spacing:.16em;text-transform:uppercase;
-    margin:0 0 26px;
-  }
-  p{margin:0 0 20px;font-size:18px;}
-  .lead{font-size:19px;}
-  .quiet{color:var(--mute);}
+  section{padding:46px 0 10px;}
+  h2{font-size:20px;font-weight:600;letter-spacing:.06em;margin:0 0 22px;
+     display:flex;align-items:center;gap:12px;font-family:var(--serif);}
+  h2::after{content:"";flex:1;height:1px;background:var(--line);}
 
-  .lines{margin:26px 0 26px;padding-left:22px;border-left:2px solid var(--gold);}
-  .lines p{font-style:italic;margin:0 0 12px;}
+  /* creed card */
+  .creed{background:var(--card);border-radius:22px;padding:38px 34px;box-shadow:var(--shadow);}
+  .creed{text-align:center;padding:44px 34px;}
+  .creed p{margin:0 0 26px;}
+  .creed p:last-child{margin-bottom:0;}
+  .creed .ask{font-family:var(--serif);font-size:19px;color:var(--gold);margin-bottom:34px;}
+  .creed .big{font-family:var(--serif);font-size:25px;line-height:1.85;letter-spacing:.04em;}
+  .creed .sharp{font-family:var(--serif);font-size:18px;}
+  .creed .last{color:var(--mute);font-size:14.5px;padding-top:14px;
+               border-top:1px solid var(--line);display:inline-block;}
 
-  .word{
-    padding:26px 0;
-    border-top:1px solid var(--rule);
-    display:flex;gap:26px;align-items:baseline;flex-wrap:wrap;
-  }
-  .word:last-child{border-bottom:1px solid var(--rule);}
-  .word .name{font-style:italic;font-size:25px;min-width:190px;}
-  .word .kanji{
-    font-family:"Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
-    color:var(--mute);font-size:19px;margin-left:-14px;
-  }
-  .word .line{flex:1 1 300px;font-style:italic;color:var(--mute);font-size:17px;}
+  .friends{display:grid;gap:18px;}
+  @media(min-width:660px){ .friends{grid-template-columns:1fr 1fr;} }
+  .fr{background:var(--card);border-radius:22px;padding:26px;box-shadow:var(--shadow);
+      display:flex;gap:20px;align-items:center;}
+  .fr img{width:112px;flex:0 0 auto;}
+  .fr h3{font-family:var(--serif);font-size:18px;font-weight:500;margin:0 0 8px;}
+  .fr p{margin:0;color:var(--mute);font-size:14px;line-height:1.8;}
 
-  .links{list-style:none;padding:0;margin:0;}
-  .links li{padding:9px 0;border-bottom:1px solid var(--rule);}
-  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold);}
-  a:hover{color:var(--gold);}
-  .links a{border-bottom:none;}
-  .links .what{color:var(--mute);font-style:italic;font-size:15px;}
+  .story{background:var(--card);border-radius:22px;padding:34px 30px;box-shadow:var(--shadow);}
+  .story p{margin:0 0 20px;font-size:15px;color:var(--mute);}
+  .story p:last-child{margin:0;}
+  .story .lead{color:var(--ink);font-size:16px;}
 
-  footer{
-    text-align:center;padding:56px 0 80px;color:var(--mute);
-    font-size:15px;font-style:italic;
-    border-top:1px solid var(--rule);margin-top:20px;
-  }
-  footer a{border-bottom:none;}
+  /* division cards */
+  .cards{display:grid;gap:18px;}
+  @media(min-width:660px){ .cards{grid-template-columns:1fr 1fr;} }
+  .card{background:var(--card);border-radius:22px;padding:30px 28px;box-shadow:var(--shadow);
+        border-top:5px solid var(--gold);}
+  .card.jp{border-top-color:var(--leaf);}
+  .card h3{font-family:var(--serif);font-size:21px;font-weight:500;margin:0 0 2px;}
+  .card .en{font-family:Georgia,serif;font-style:italic;color:var(--gold);font-size:12px;
+            letter-spacing:.14em;margin-bottom:14px;}
+  .card.jp .en{color:var(--leaf);}
+  .card p{margin:0;color:var(--mute);font-size:15px;}
 
-  @media (max-width:600px){
-    header{padding:58px 0 36px;}
-    .mark{font-size:60px;}
-    h1{font-size:31px;}
-    p{font-size:17px;}
-    .word .name{min-width:0;}
-  }
+  /* chips */
+  .chips{display:grid;gap:12px;}
+  @media(min-width:560px){ .chips{grid-template-columns:1fr 1fr;} }
+  .chip{background:var(--card);border-radius:16px;padding:16px 20px;box-shadow:var(--shadow);
+        display:flex;align-items:center;gap:14px;transition:transform .16s, box-shadow .16s;}
+  .chip:hover{transform:translateY(-3px);
+    box-shadow:0 4px 6px rgba(120,95,60,.07), 0 18px 34px rgba(120,95,60,.13);}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:0 0 auto;}
+  .chip.leaf .dot{background:var(--leaf);}
+  .chip.sky  .dot{background:var(--sky);}
+  .chip b{font-weight:600;font-size:16px;}
+  .chip span{color:var(--mute);font-size:13px;display:block;line-height:1.6;}
+
+  /* words */
+  .words{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  @media(min-width:620px){ .words{grid-template-columns:repeat(4,1fr);} }
+  .words a{display:block;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);
+           transition:transform .16s;}
+  .words a:hover{transform:translateY(-4px);}
+  .words img{width:100%;display:block;}
+  .wcap{color:var(--mute);font-size:14px;margin:22px 0 24px;text-align:center;}
+
+  /* rabbit block */
+  .usagi{background:var(--card);border-radius:22px;padding:30px;box-shadow:var(--shadow);
+         display:flex;gap:26px;align-items:center;flex-wrap:wrap;}
+  .usagi img{width:140px;flex:0 0 auto;}
+  .usagi div{flex:1 1 260px;}
+  .usagi p{margin:0 0 10px;color:var(--mute);font-size:15px;}
+  .usagi p:last-child{margin:0;}
+
+  footer{margin-top:56px;padding:40px 0 84px;text-align:center;
+         color:var(--mute);font-size:14px;line-height:2.1;border-top:1px solid var(--line);}
+  footer a{border-bottom:1px solid var(--line);}
+  .lang{display:inline-block;margin-top:16px;padding:8px 20px;border:1px solid var(--gold);
+        border-radius:999px;font-family:Georgia,serif;font-style:italic;color:var(--gold);
+        letter-spacing:.08em;border-bottom:1px solid var(--gold);}
 </style>
 </head>
 <body>
+
+<header>
+  <img class="hero-usagi" src="images/usagi-sitting.png" alt="ことのはうさぎ">
+  <h1>ことのは</h1>
+  <div class="romaji">C O T O N O H A</div>
+  <div class="tag">法とことばを、やさしく、たのしく、ちょっぴり深く。</div>
+  <div class="leafrule"></div>
+</header>
+
 <div class="wrap">
 
-  <header>
-    <div class="mark">言</div>
-    <h1>Cotonoha</h1>
-    <div class="tag">Japanese words, with a little room to breathe.</div>
-    <div class="rule"></div>
-  </header>
-
   <section>
-    <p class="lead">Every print we make has two halves.</p>
-    <p>The first is the word itself, explained as carefully as we can, in Japan,
-       drawing on Japanese dictionaries and trusted sources.</p>
-    <p>The second is our own words — not a translation, but a quiet line for the
-       days when you need one.</p>
-
-    <div class="lines">
-      <p>On the day you want it, you can simply pick it up.</p>
-      <p>You do not have to answer right away.</p>
-      <p>There is no need to tidy away what you are feeling now.</p>
-    </div>
-
-    <p>Put the words side by side, and they begin to say one thing:
-       <strong>not how to live — only that you do not have to be further along
-       than you are.</strong></p>
-  </section>
-
-  <section>
-    <h2>The words</h2>
-
-    <div class="word">
-      <span class="name">Kintsugi</span><span class="kanji">金継ぎ</span>
-      <span class="line">You were hurt, and you kept walking. No one else has walked your path.</span>
-    </div>
-    <div class="word">
-      <span class="name">Natsukashii</span><span class="kanji">懐かしい</span>
-      <span class="line">If it felt natsukashii, that moment is still with you.</span>
-    </div>
-    <div class="word">
-      <span class="name">Mono no Aware</span><span class="kanji">物の哀れ</span>
-      <span class="line">There is no need to tidy away what you are feeling now.</span>
-    </div>
-    <div class="word">
-      <span class="name">Ikigai</span><span class="kanji">生き甲斐</span>
-      <span class="line">You do not have to be able to say "this is my ikigai."</span>
-    </div>
-    <div class="word">
-      <span class="name">Tsundoku</span><span class="kanji">積読</span>
-      <span class="line">On the day you want it, you can simply pick it up.</span>
-    </div>
-    <div class="word">
-      <span class="name">Komorebi</span><span class="kanji">木漏れ日</span>
-      <span class="line">A warmth that lasts only a moment is still worth keeping.</span>
-    </div>
-    <div class="word">
-      <span class="name">Ma</span><span class="kanji">間</span>
-      <span class="line">You do not have to answer right away.</span>
+    <div class="creed">
+      <p class="ask">――私たちは、安心して「ことば」を使えているでしょうか。</p>
+      <p class="big">法も、ことばも、<br>自分や、まわりの人を守るものです。</p>
+      <p>暮らしを、少し生きやすくしてくれるものでもあります。</p>
+      <p class="sharp">けれど、使い方を誤れば、どちらも武器になります。</p>
+      <p>やさしい社会であるために、どちらも大切にしたいと思っています。</p>
+      <p class="last">ここに来てくださった方が、少しだけ荷物を下ろして帰れたら、うれしいです。</p>
     </div>
   </section>
 
   <section>
-    <h2>Where to buy</h2>
-    <ul class="links">
-      <li><a href="https://www.etsy.com/shop/CotonohaJP">Etsy — CotonohaJP</a>
-          <span class="what">printable wall art, worldwide</span></li>
-      <li><a href="https://cotonoha.booth.pm/">BOOTH</a>
-          <span class="what">for readers in Japan</span></li>
-    </ul>
+    <h2>ふたつの部門</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>ことのは法務ラボ</h3>
+        <div class="en">Cotonoha Legal Lab</div>
+        <p>法を、届くことばにする。note記事と「おとのはラジオ」で、暮らしのなかの法律を話しています。</p>
+      </div>
+      <div class="card jp">
+        <h3>CotonohaJP</h3>
+        <div class="en">Words and Culture</div>
+        <p>日本のことばと文化を、外へ。懐かしい、木漏れ日、間。訳しきれないことばを、意味のまま届けます。</p>
+      </div>
+    </div>
   </section>
 
   <section>
-    <h2>Elsewhere</h2>
-    <ul class="links">
-      <li><a href="https://note.com/cotonoha_usagi">note</a>
-          <span class="what">essays in Japanese — where most of our writing lives</span></li>
-      <li><a href="https://www.instagram.com/cotonoha_houmu_labo">Instagram</a>
-          <span class="what">@cotonoha_houmu_labo</span></li>
-      <li><a href="https://x.com/CotonohaL">X</a>
-          <span class="what">@CotonohaL</span></li>
-      <li><a href="https://stand.fm/channels/683828f9217d2adac76a4c44">stand.fm</a>
-          <span class="what">おとのはラジオ — a quiet radio, in Japanese</span></li>
-      <!-- PINTEREST_LINK -->
-    </ul>
+    <h2>読む・聴く</h2>
+    <div class="chips">
+      <a class="chip" href="https://note.com/cotonoha_usagi" target="_blank" rel="noopener">
+        <i class="dot"></i><div><b>note</b><span>法とことばの記事。毎週木曜に更新</span></div></a>
+      <a class="chip leaf" href="https://stand.fm/channels/683828f9217d2adac76a4c44" target="_blank" rel="noopener">
+        <i class="dot"></i><div><b>stand.fm</b><span>おとのはラジオ。やさしい語りで</span></div></a>
+      <a class="chip leaf" href="https://open.spotify.com/show/41w73fXVBl5fC0ip1dWa5E" target="_blank" rel="noopener">
+        <i class="dot"></i><div><b>Spotify</b><span>おとのはラジオ。ポッドキャストでも</span></div></a>
+    </div>
   </section>
 
   <section>
-    <h2>日本語で</h2>
-    <p class="quiet">日本語の言葉を、日本で書いています。</p>
-    <p class="quiet">辞書と、古くから読まれてきた文章にあたって、意味をできるだけ正確に書く。
-       そのうえで、わたしたちの一行を添えています。訳ではありません。
-       疲れた夜に読みたくなるような、一行を。</p>
-    <p class="quiet">どう生きるか、ではありません。
-       今より先に行っていなくてもいい、ということだけです。</p>
+    <h2>ことばを、飾る</h2>
+    <div class="words">
+      <a href="https://www.etsy.com/shop/CotonohaJP" target="_blank" rel="noopener"><img src="images/word-kintsugi.jpg" alt="金継ぎのポスター"></a>
+      <a href="https://www.etsy.com/shop/CotonohaJP" target="_blank" rel="noopener"><img src="images/word-natsukashii.jpg" alt="懐かしいのポスター"></a>
+      <a href="https://www.etsy.com/shop/CotonohaJP" target="_blank" rel="noopener"><img src="images/word-komorebi.jpg" alt="木漏れ日のポスター"></a>
+      <a href="https://www.etsy.com/shop/CotonohaJP" target="_blank" rel="noopener"><img src="images/word-ma.jpg" alt="間のポスター"></a>
+    </div>
+    <p class="wcap">ことばの意味と、こちらからの一行を添えた、印刷用のウォールアート。</p>
+    <div class="chips">
+      <a class="chip leaf" href="https://cotonoha.booth.pm/" target="_blank" rel="noopener">
+        <i class="dot"></i><div><b>BOOTH</b><span>日本の方へ</span></div></a>
+      <a class="chip" href="https://www.etsy.com/shop/CotonohaJP" target="_blank" rel="noopener">
+        <i class="dot"></i><div><b>Etsy</b><span>海外向け。英語・米ドル表示です</span></div></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>ことのはの今</h2>
+    <div class="chips">
+      <a class="chip sky" href="https://x.com/CotonohaL" target="_blank" rel="noopener">
+        <i class="dot"></i><div><b>X</b><span>@CotonohaL</span></div></a>
+      <a class="chip sky" href="https://www.instagram.com/cotonoha_houmu_labo" target="_blank" rel="noopener">
+        <i class="dot"></i><div><b>Instagram</b><span>@cotonoha_houmu_labo</span></div></a>
+      <a class="chip sky" href="https://www.tiktok.com/@cotonohalegallabo" target="_blank" rel="noopener">
+        <i class="dot"></i><div><b>TikTok</b><span>@cotonohalegallabo</span></div></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>ことのはの、仲間たち</h2>
+    <div class="friends">
+      <div class="fr">
+        <img src="images/usagi-pointing.png" alt="ことのはうさぎ">
+        <div>
+          <h3>ことのはうさぎ</h3>
+          <p>ことのはの森の図書館で、契約書から生まれた妖精です。見た目はふんわりしていますが、案外ずばっと言う子です。</p>
+        </div>
+      </div>
+      <div class="fr">
+        <img src="images/wabineko.png" alt="わびねこ">
+        <div>
+          <h3>わびねこ</h3>
+          <p>ことのはうさぎを導く、わびの師匠ねこ。静かで深いまなざしで、弟子の成長を見守っています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>ことのは法務ラボの、はじまり</h2>
+    <div class="story">
+      <p class="lead">ことのは法務ラボは、法とことばの関係を、やさしく、たのしく、そしてちょっぴり深く伝えるところから始まりました。</p>
+      <p>スマホひとつで、誰もが発信できる時代です。その一方で、ことばに傷つく人が後を絶ちません。子どもたちでさえ、いじめの延長がネットにまで及んでいます。</p>
+      <p>法律を知ることは、難解なルールを覚えることではありません。自分を守り、人を守る「やさしい知恵」を身につけることだと思っています。</p>
+      <p>契約や相続、認知症といった話題が、ふいに身近になる日があります。「今さら法律なんて」と思わずにいられたら、知っているだけで、暮らしがうまく回ることがあるのですよね。</p>
+      <p>それから、もうひとつ。大学で法律を教えていると、試験に惜しくも届かなかった学生に出会います。けれど、彼らが学んだことには、確かな価値があるのです。</p>
+      <p>「学んだけれど、何も残らなかった」――そんなふうに終わらせたくありません。だから、かたちに残る場所をつくりたいと思いました。</p>
+    </div>
   </section>
 
 </div>
 
 <footer>
   <div class="wrap">
-    Cotonoha ・ ことのは法務ラボ<br>
-    <a href="privacy.html">Privacy Policy ／ プライバシーポリシー</a><br>
+    Cotonoha ／ ことのは法務ラボ<br>
+    <a href="privacy.html">プライバシーポリシー</a><br>
     cotonoha.houme.labo@gmail.com
+    <br><a class="lang" href="en/">English</a>
   </div>
 </footer>
 
