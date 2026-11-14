@@ -1,0 +1,44 @@
+# HPの「新着」を、noteから自動で取ってくる設定
+#
+# 毎日1回、note（https://note.com/cotonoha_usagi/rss）を見に行って、
+# index.html の <!--NEWS_START--> と <!--NEWS_END--> のあいだを
+# 最新5件に書き換えます。変わったときだけ保存します。
+#
+# ⚠ 2026-11-14 設置。理由：
+#   サイトの新着が 2026.08.22 で止まっていた。同じページに
+#   「毎週木曜に更新」と書いてあるのに、見た人には止まって見えていた。
+#   手で足す形だと、また止まる。だから取りに行く形にした。
+#
+# 中身は update-news.js にあります。
+
+name: 新着をnoteから更新
+
+on:
+  schedule:
+    # 毎日 日本時間の朝7時（UTC 22:00）
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 新着を作り直す
+        run: node update-news.js
+
+      - name: 変わっていたら保存する
+        run: |
+          if [ -n "$(git status --porcelain index.html)" ]; then
+            git config user.name  "cotonoha-bot"
+            git config user.email "cotonoha-bot@users.noreply.github.com"
+            git add index.html
+            git commit -m "新着をnoteから更新"
+            git push
+          else
+            echo "変更なし"
+          fi
