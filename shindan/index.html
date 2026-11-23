@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- ⚠ キットが売れる状態になったら、下の1行を消すこと（2026-10-20 西野） -->
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>親のこと、何から？｜18の質問でわかる、はじめの一歩 ／ ことのは法務ラボ</title>
+<meta name="description" content="親の介護や終活、何から準備すればいいか分からない方へ。18の質問に答えると、いま最初に整理するとよいことが分かります。無料。ことのは法務ラボ。">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<style>
+  :root{
+    --bg:#fdf6e8; --card:#fffdf7; --ink:#3b2f22; --mute:#7a6852;
+    --gold:#c39a4e; --leaf:#8fa176; --sky:#a7cbd6; --line:#ece0c8;
+    --sans:"Hiragino Maru Gothic ProN","Yu Gothic UI","Yu Gothic","Meiryo",system-ui,sans-serif;
+    --serif:"Yu Mincho","Hiragino Mincho ProN",Georgia,serif;
+    --shadow:0 2px 3px rgba(120,95,60,.05), 0 12px 28px rgba(120,95,60,.09);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.9;font-size:16px}
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px 64px}
+
+  header{text-align:center;padding:40px 0 8px}
+  .usagi{width:150px;display:block;margin:0 auto;filter:drop-shadow(0 12px 20px rgba(120,95,60,.16))}
+  h1{font-family:var(--serif);font-size:28px;font-weight:400;letter-spacing:.08em;margin:10px 0 6px}
+  .lead{color:var(--mute);font-size:15px;margin:0}
+
+  .card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:28px 26px;margin-top:22px}
+  .note{color:var(--mute);font-size:13.5px;line-height:1.9}
+  .btn{display:inline-block;border:none;cursor:pointer;font-family:inherit;
+       background:var(--gold);color:#fffdf7;border-radius:999px;padding:14px 34px;font-size:16px;
+       box-shadow:0 6px 14px rgba(195,154,78,.28);transition:transform .12s, box-shadow .12s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 10px 18px rgba(195,154,78,.34)}
+  .btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
+  .center{text-align:center}
+
+  .bar{height:10px;background:#f2e7d2;border-radius:999px;overflow:hidden;margin:6px 0 4px}
+  .bar > i{display:block;height:100%;background:var(--leaf);border-radius:999px;width:0;transition:width .25s}
+  .count{color:var(--mute);font-size:13px;letter-spacing:.06em}
+
+  .q{font-family:var(--serif);font-size:19px;line-height:1.8;margin:14px 0 20px}
+  .choices{display:grid;gap:10px}
+  .choice{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);
+          border-radius:16px;padding:14px 18px;font-size:15.5px;font-family:inherit;color:var(--ink);
+          cursor:pointer;transition:background .14s, border-color .14s, transform .08s}
+  .choice:hover{background:#fffaf0;border-color:var(--gold)}
+  .choice:active{transform:scale(.995)}
+  .choice.sub{color:var(--mute);font-size:14.5px}
+
+  .back{margin-top:16px;color:var(--mute);font-size:13.5px;background:none;border:none;cursor:pointer;font-family:inherit}
+  .back:hover{color:var(--gold)}
+
+  .result h2{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.75;margin:0 0 6px}
+  .result h3{font-family:var(--serif);font-size:17px;font-weight:500;margin:26px 0 8px;color:var(--gold)}
+  .result p{margin:0 0 14px;font-size:15.5px}
+  .step{background:#fffaf0;border:1px dashed var(--gold);border-radius:16px;padding:18px 20px;font-size:15.5px}
+  .cta{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:26px 24px;margin-top:22px;text-align:center}
+  .cta .name{font-family:var(--serif);font-size:19px;margin:6px 0 2px}
+  .cta .price{color:var(--mute);font-size:14px;margin-bottom:16px}
+  .usagi-small{width:92px;display:block;margin:0 auto 6px}
+  .usagi-says{display:flex;align-items:center;gap:14px;margin-top:26px;
+              background:#f7fbf9;border:1px solid #dfece4;border-radius:18px;padding:16px 18px}
+  .usagi-says img{width:64px;flex:none}
+  .usagi-says p{margin:0;font-size:15px;line-height:1.85;color:var(--ink)}
+  .foot{color:var(--mute);font-size:12.5px;line-height:1.95;margin-top:26px}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img class="usagi" src="images/usagi-setsumei.png" alt="ことのはうさぎ">
+    <h1>親のこと、何から？</h1>
+    <p class="lead">18の質問でわかる、はじめの一歩</p>
+  </header>
+
+  <section id="intro" class="card">
+    <p style="margin-top:0">親御さんのこれからについて、気になってはいるけれど、どこから手をつければいいか分からない——。<br>
+    18の質問に答えると、<strong>いま最初に整理するとよいこと</strong>が分かります。</p>
+    <p class="note">
+      ・<strong>診断内容にかかる個人情報は取得しません。</strong>いただいた回答は、診断の改善のためにのみ活用します。<br>
+      ・お名前・ご連絡先・金額などを入力していただくことはありません。<br>
+      ・「親御さんが危ない」「終活が必要」といったことを判定するものではありません。<br>
+      ・これは医療・心理・法律上の判断ではありません。くわしいことは、専門家や公的な窓口にご相談ください。
+    </p>
+    <p class="center" style="margin-bottom:0"><button class="btn" id="start">はじめる</button></p>
+  </section>
+
+  <section id="quiz" class="card hidden">
+    <div class="count"><span id="now">1</span> / 18</div>
+    <div class="bar"><i id="prog"></i></div>
+    <p class="q" id="qtext"></p>
+    <div class="choices" id="choices"></div>
+    <button class="back hidden" id="back">← ひとつ前にもどる</button>
+  </section>
+
+  <section id="result" class="hidden">
+    <div class="card result">
+      <img class="usagi-small" src="images/usagi-hotto.png" alt="">
+      <h2 id="rtitle"></h2>
+      <div id="rbody"></div>
+      <h3>最初の一歩</h3>
+      <div class="step" id="rstep"></div>
+
+      <div class="usagi-says">
+        <img src="images/usagi-kaku.png" alt="ことのはうさぎ">
+        <p id="rusagi"></p>
+      </div>
+    </div>
+
+    <div class="cta" id="rcta">
+      <div class="note">くわしく整理したい方へ</div>
+      <div class="name" id="ctaname"></div>
+      <div class="price" id="ctaprice"></div>
+      <a class="btn" id="ctalink" href="#">noteでくわしく見る</a>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;font-family:var(--serif);color:var(--gold)">困ったときの相談先</h3>
+      <p class="note" style="margin:0">
+        ・お住まいの市区町村の<strong>地域包括支援センター</strong>（介護・生活のこと）<br>
+        ・お住まいの市区町村の高齢者福祉の窓口<br>
+        ・法律にかかわることは、弁護士・司法書士などの専門家へ<br>
+        ・税にかかわることは、税理士へ
+      </p>
+    </div>
+
+    <p class="center" style="margin-top:22px">
+      <button class="btn ghost" id="again">もう一度やってみる</button>
+    </p>
+
+    <p class="foot">
+      このチェックは、回答の傾向をもとに「最初に整理するとよいこと」をお伝えするものです。
+      医療・心理・法律上の判断ではありません。
+      個別のご事情については、専門家や公的な窓口にご相談ください。<br>
+      ことのは法務ラボ
+    </p>
+  </section>
+
+</div>
+
+<script>
+// ===== 記録の設定 =====
+// ⚠ ここに、Apps Script の「ウェブアプリのURL」を入れてください（手順書のSTEP5）。
+// 空のままなら、何も送りません（記録なしで動きます）。
+const LOG_URL = "https://script.google.com/macros/s/AKfycbyOnXAyhIlDqMuQrFVDtDDK0ZK3tOc2vr7n0uoAdXuiUNMgkNEwxPOuNvWiMXaPjWoRbw/exec";
+// 商品ページ（noteの有料記事）のURL。結果ごとに入れます。空ならそのボタンは出ません。
+// ⚠ 2026-11-23 に入れた。A=①話す／B=②知る／C=③そなえる／D=④まるごと
+const NOTE_URL = {
+  A:"https://note.com/cotonoha_usagi/n/nac2c6878d00e",
+  B:"https://note.com/cotonoha_usagi/n/n52091092b00d",
+  C:"https://note.com/cotonoha_usagi/n/n11027ae1082e",
+  D:"https://note.com/cotonoha_usagi/n/na7e1cf9f0ad0"
+};
+// ⚠ 2026-11-23 オーナー決定：販売はnoteの1本。Stripeのボタンは置かない。
+//    （Stripeの決済リンクは作ってあるが、PDFの受け渡しができないため使わない）
+
+let sessionId = "";
+function newId(){
+  return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2,8);
+}
+function sendLog(payload){
+  if(!LOG_URL) return;
+  try{
+    fetch(LOG_URL, {
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"text/plain;charset=utf-8"},
+      body: JSON.stringify(payload)
+    }).catch(function(){ /* 記録に失敗しても、診断は続けます */ });
+    // ⚠ .catch が要る（2026-11-23）。try/catch だけでは fetch の失敗を受け止められず、
+    //    広告ブロッカー等で script.google.com が塞がれたとき、閲覧者のコンソールにエラーが出る。
+  }catch(e){ /* 記録に失敗しても、診断は続けます */ }
+}
+
+const QUESTIONS = [
+  {id:"A1", area:"A", t:"親御さんが、これから先どこで、どんなふうに暮らしたいと思っているか、分かりますか？"},
+  {id:"A2", area:"A", t:"お父様やお母様が、これからも大切にしたいこと・続けたいことを、知っていますか？"},
+  {id:"A3", area:"A", t:"介護や手助けが必要になったとき、親御さんがどうしたいと思っているか、分かりますか？"},
+  {id:"A4", area:"A", t:"病気や入院で、親御さんが自分では決められなくなったとき、どうしてほしいと思っているか、知っていますか？"},
+  {id:"A5", area:"A", t:"これから先のことについて、兄弟姉妹など、ほかのご家族がどう考えているか、分かりますか？"},
+  {id:"A6", area:"A", ch:"kimeru", t:"親御さんのことで何かあったとき、誰が何をするか、ご家族のあいだで決めてありますか？"},
+
+  {id:"B1", area:"B", t:"親御さんが、いまどんなふうに暮らしているか、分かりますか？"},
+  {id:"B2", area:"B", t:"お父様やお母様のかかりつけの病院や、通っている医療機関を、知っていますか？"},
+  {id:"B3", area:"B", t:"親御さんが日々の暮らしで困っていることや、手助けがいることが、分かりますか？"},
+  {id:"B4", area:"B", ch:"kimeru", t:"急な入院や体調の変化があったとき、誰に連絡して誰が動くか、決めてありますか？"},
+  {id:"B5", area:"B", t:"親御さんが暮らしや介護のことで困ったとき、どこに相談すればよいか、知っていますか？"},
+  {id:"B6", area:"B", ch:"kimeru", t:"親御さんと離れて暮らしている場合、急なことがあったとき、誰が様子を見に行くか、決めてありますか？", na:"同居しているので、当てはまらない"},
+
+  {id:"C1", area:"C", t:"親御さんが使っている銀行・証券・保険に何があるか、またその情報がどこにあるか、分かりますか？"},
+  {id:"C2", area:"C", t:"親御さんが不動産を持っている場合、その場所や、関係する書類のありかを、知っていますか？", na:"不動産は持っていないので、当てはまらない"},
+  {id:"C3", area:"C", t:"ローンや借入、保証人、長く続く支払いなど、気をつけておきたい約束ごとがあるかどうか、分かりますか？"},
+  {id:"C4", area:"C", t:"定期購入やサブスクなど、お父様やお母様が続けて払っているサービスや契約を、知っていますか？"},
+  {id:"C5", area:"C", t:"親御さんが遺言書やエンディングノートを書いているかどうか、書いている場合はどこにあるかを、知っていますか？"},
+  {id:"C6", area:"C", t:"お墓や納骨先について、お寺や霊園の連絡先を知っていますか？", na:"お墓や納骨先、お寺とのお付き合いはないので、当てはまらない"}
+];
+
+const CHOICES = [
+  {label:"よく分かっている", score:0},
+  {label:"だいたい分かっている", score:1},
+  {label:"あまり分かっていない", score:2},
+  {label:"分かっていない", score:3}
+];
+
+// 「決めてあるか」を聞く設問だけ、答え方を変える（2026-10-22 岡井さんの指摘）
+const CHOICES_KIMERU = [
+  {label:"決めてある", score:0},
+  {label:"なんとなく決めてある", score:1},
+  {label:"あまり決めていない", score:2},
+  {label:"決めていない", score:3}
+];
+
+const RESULTS = {
+  A:{
+    title:"あなたが最初に整理するとよいのは、<br>「親・家族と話すこと」でした。",
+    body:`<p>これから、どこで、どんなふうに暮らしたいか。<br>
+          何を大切にしていきたいか。<br>
+          家族は、どこまで関われるか。</p>
+          <p>このあたりに、もう少し知っておいたほうがよいことがありそうです。</p>
+          <p>急ぐ必要はありません。何かの折に、聞いてみることをおすすめします。<br>
+          たとえば、<strong>「もしものとき、どうする？」より、「これから、どうしたい？」</strong>のほうが、切り出しやすいと思います。</p>`,
+    step:"親御さんに「これからも続けたいこと」を一つ聞いてみる。",
+    usagi:"いきなりかしこまった話ではなく、<br>日常会話にまぜてお話ししてみてね。",
+    cta:"【話す】「これから、どうしたい？」ノート", price:"1,480円"
+  },
+  B:{
+    title:"あなたが最初に整理するとよいのは、<br>「親の今を知ること」でした。",
+    body:`<p>いま、どんなふうに暮らしているか。<br>
+          体のこと、毎日のこと。<br>
+          何かあったとき、誰に連絡をするか。</p>
+          <p>このあたりに、もう少し知っておいたほうがよいことがありそうです。</p>
+          <p>元気に暮らしている親御さんほど、細かいところは聞かないまま過ぎていきます。<br>
+          ここから、ゆっくり聞いていけば大丈夫です。</p>`,
+    step:"親御さんの「普段の生活」を一度聞いてみる。",
+    usagi:"今のたのしいこと、うれしいこと、困ってること、<br>いっぱいお話ししてみてね。",
+    cta:"【知る】「親のいま」ノート", price:"1,480円"
+  },
+  C:{
+    title:"あなたが最初に整理するとよいのは、<br>「お金・財産・契約」でした。",
+    body:`<p>銀行、保険、不動産、契約、遺言書。<br>
+          親御さんの財産は、どこまで聞いていいか悩みますよね。</p>
+          <p>ぜんぶを見せてもらう必要はありません。<br>
+          <strong>知っておきたいのは、大事な書類がどこにあるかです。</strong>それが分からなくても、どこに問い合わせればいいかだけでも、押さえておけると安心です。</p>`,
+    step:"「大事な書類や情報は、何かあったときどこを見ればいい？」と聞いてみる。",
+    usagi:"お金の話はしづらいよね。<br>いま使っている銀行や保険のことからでいいから、聞いてみてね。",
+    cta:"【そなえる】「お金と契約」ノート", price:"1,480円"
+  },
+  D:{
+    title:"今回は、ひとつに絞るより、<br>「親のこれから」を、まるごと並べてみるのがよさそうです。",
+    body:`<p>親御さんの希望。いまの暮らし。家族のこと。お金や契約のこと。<br>
+          別々のようでいて、どれもつながっています。</p>
+          <p>一度にぜんぶ確かめなくて大丈夫です。<br>
+          まずは、並べて眺めてみるところからで十分です。</p>`,
+    step:"今日の結果を見て、気になったことを3つ書き出してみる。",
+    usagi:"何から手をつけていいか分からないときは、<br>親御さんがこれからどうしたいか、世間話のついでに聞いてみてね。",
+    cta:"【まるごと】「親のこれから」ノート", price:"2,980円"
+  },
+  E:{
+    title:"いま急いで整理することは、<br>なさそうです。",
+    body:`<p>今回の答えを見るかぎり、親御さんのいまの暮らしも、これからの希望も、お金のことも、よく見えているようです。</p>
+          <p>親御さんの状況は、これから変わることもあります。<br>
+          年に一度くらい、様子を聞く時間があれば、それで十分だと思います。</p>`,
+    step:"次に会ったとき、「最近、何か変わったことはない？」と聞いてみる。",
+    usagi:"いまのままで大丈夫。<br>気になったときに、また診断してみてね。",
+    cta:null, price:null
+  }
+};
+
+function shuffle(a){const x=a.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]];}return x;}
+function buildOrder(){
+  const pool={A:shuffle(QUESTIONS.filter(q=>q.area==="A")),
+              B:shuffle(QUESTIONS.filter(q=>q.area==="B")),
+              C:shuffle(QUESTIONS.filter(q=>q.area==="C"))};
+  const out=[];
+  for(let r=0;r<6;r++){ shuffle(["A","B","C"]).forEach(k=>out.push(pool[k][r])); }
+  return out;
+}
+
+let order=[], idx=0, answers=[];
+const $=id=>document.getElementById(id);
+
+function render(){
+  const q=order[idx];
+  $("now").textContent=idx+1;
+  $("prog").style.width=((idx+1)/order.length*100)+"%";
+  $("qtext").textContent=q.t;
+  const box=$("choices"); box.innerHTML="";
+  const cs = (q.ch === "kimeru") ? CHOICES_KIMERU : CHOICES;
+  cs.forEach(c=>{
+    const b=document.createElement("button");
+    b.className="choice"; b.textContent=c.label;
+    b.onclick=()=>answer(c.score);
+    box.appendChild(b);
+  });
+  if(q.na){
+    const b=document.createElement("button");
+    b.className="choice sub"; b.textContent=q.na;
+    b.onclick=()=>answer(null);
+    box.appendChild(b);
+  }
+  $("back").classList.toggle("hidden", idx===0);
+}
+function answer(score){
+  answers[idx]={id:order[idx].id, area:order[idx].area, score:score};
+  idx++;
+  if(idx<order.length){ render(); } else { finish(); }
+}
+function finish(){
+  const sum={A:[0,0],B:[0,0],C:[0,0]};
+  answers.forEach(a=>{ if(a.score!==null){ sum[a.area][0]+=a.score; sum[a.area][1]++; } });
+  const avg={};
+  ["A","B","C"].forEach(k=>{ avg[k]= sum[k][1]>0 ? sum[k][0]/sum[k][1] : 0; });
+
+  let key;
+  if(avg.A<1 && avg.B<1 && avg.C<1){ key="E"; }
+  else{
+    const sorted=["A","B","C"].sort((x,y)=>avg[y]-avg[x]);
+    key = (avg[sorted[0]]-avg[sorted[1]] >= 0.3) ? sorted[0] : "D";
+  }
+  sendLog({
+    id: sessionId,
+    result: key,
+    avgA: avg.A.toFixed(4), avgB: avg.B.toFixed(4), avgC: avg.C.toFixed(4),
+    order: order.map(q=>q.id).join(","),
+    answers: answers.map(a=>a.id+":"+(a.score===null?"na":a.score)).join(","),
+    event: "finish"
+  });
+  show(key);
+}
+function show(key){
+  const r=RESULTS[key];
+  $("quiz").classList.add("hidden");
+  $("result").classList.remove("hidden");
+  $("rtitle").innerHTML=r.title;
+  $("rbody").innerHTML=r.body;
+  $("rstep").textContent=r.step;
+  $("rusagi").innerHTML=r.usagi;
+  if(r.cta){
+    $("rcta").classList.remove("hidden");
+    $("ctaname").textContent=r.cta;
+    $("ctaprice").textContent=r.price;
+    const u = NOTE_URL[key] || "";
+    $("ctalink").href = u || "#";
+    $("ctalink").onclick = function(){ sendLog({ id: sessionId, result: key, event: "cta" }); };
+    if(!u){ $("ctalink").style.display="none"; } else { $("ctalink").style.display=""; }
+  }else{
+    $("rcta").classList.add("hidden");
+  }
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+$("start").onclick=()=>{ order=buildOrder(); idx=0; answers=[]; sessionId=newId();
+  $("intro").classList.add("hidden"); $("quiz").classList.remove("hidden"); render(); };
+$("back").onclick=()=>{ if(idx>0){ idx--; render(); } };
+$("again").onclick=()=>{ $("result").classList.add("hidden"); $("intro").classList.remove("hidden");
+  window.scrollTo({top:0,behavior:"smooth"}); };
+</script>
+</body>
+</html>
