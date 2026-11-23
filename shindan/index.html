@@ -8,6 +8,17 @@
 <title>親のこと、何から？｜18の質問でわかる、はじめの一歩 ／ ことのは法務ラボ</title>
 <meta name="description" content="親の介護や終活、何から準備すればいいか分からない方へ。18の質問に答えると、いま最初に整理するとよいことが分かります。無料。ことのは法務ラボ。">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+
+<!-- ⚠ 2026-11-23 追加。それまで診断ページにはGA4が入っておらず、GA4からは見えていなかった。
+     測定IDはサイト本体と同じ（G-35X2N5NKJM）。GA4では「ページパス」で /shindan/ を分けて見る。
+     回答そのものは、従来どおりスプレッドシート（Apps Script）に貯まる。GA4には回答内容を送らない。 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-35X2N5NKJM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-35X2N5NKJM");
+</script>
 <style>
   :root{
     --bg:#fdf6e8; --card:#fffdf7; --ink:#3b2f22; --mute:#7a6852;
@@ -173,6 +184,15 @@ function newId(){
   return Date.now().toString(36) + "-" + Math.random().toString(36).slice(2,8);
 }
 function sendLog(payload){
+  // ⚠ GA4にも同じ出来事だけを送る（2026-11-23 追加）。
+  //    送るのは「何が起きたか」と「どの結果だったか」だけ。回答そのものは送らない。
+  //    回答の中身は、従来どおりスプレッドシートにだけ貯まる。
+  try{
+    if(typeof gtag === "function" && payload && payload.event){
+      gtag("event", "shindan_" + payload.event, { result: payload.result || "" });
+    }
+  }catch(e){ /* 計測に失敗しても、診断は続けます */ }
+
   if(!LOG_URL) return;
   try{
     fetch(LOG_URL, {
